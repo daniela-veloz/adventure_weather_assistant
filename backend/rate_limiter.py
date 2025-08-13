@@ -62,16 +62,27 @@ class RateLimiter:
         daily_limit (int): Maximum requests allowed per day
         cooldown_seconds (int): Minimum seconds between requests
     """
-    def __init__(self, rate_dir=".rate_limits"):
+    def __init__(self, rate_dir=None):
         """
         Initialize the rate limiter.
         
         Args:
             rate_dir (str): Directory path for storing rate limit data files.
-                           Defaults to '.rate_limits'.
+                           Defaults to a temp directory if not specified.
         """
+        if rate_dir is None:
+            # Use temp directory as fallback for containerized environments
+            import tempfile
+            rate_dir = os.path.join(tempfile.gettempdir(), "rate_limits")
+        
         self.rate_dir = Path(rate_dir)
-        self.rate_dir.mkdir(exist_ok=True)
+        try:
+            self.rate_dir.mkdir(exist_ok=True)
+        except PermissionError:
+            # Fallback to temp directory if current directory is not writable
+            import tempfile
+            self.rate_dir = Path(tempfile.gettempdir()) / "rate_limits"
+            self.rate_dir.mkdir(exist_ok=True)
         
         # Configuration from environment variables with defaults
         self.hourly_limit = int(os.getenv('HOURLY_LIMIT', DEFAULT_HOUR_LIMIT))
