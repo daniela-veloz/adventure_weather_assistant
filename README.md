@@ -1,3 +1,16 @@
+---
+title: Adventure Weather Assistant
+emoji: 🌤️
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: "1.48.0"
+app_file: app.py
+pinned: false
+license: mit
+short_description: An intelligent activity planning assistant based on weather and events
+---
+
 # 🌤️ Adventure Weather Assistant
 
 An intelligent activity planning assistant that combines real-time weather data with local event information to suggest
