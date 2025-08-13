@@ -1,7 +1,2 @@
 git
-ffmpeg
-libsm6
-libxext6
-cmake
-rsync
-libgl1-mesa-dev
+git-lfs
