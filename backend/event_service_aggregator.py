@@ -2,9 +2,9 @@ import json
 import concurrent.futures
 from datetime import datetime
 from typing import Dict, Any, List, Optional
-from event_service import EventService
-from ticketmaster_service import TicketMasterService
-from google_places_service import GooglePlacesService
+from .event_service import EventService
+from .ticketmaster_service import TicketMasterService
+from .google_places_service import GooglePlacesService
 
 
 class EventServiceAggregator(EventService):

@@ -116,8 +116,7 @@ class RateLimiter:
         """
         Check if the current IP address is within rate limits.
         
-        Performs a comprehensive check of all rate limiting rules including
-        cooldown period, hourly limits, and daily limits. Also cleans up
+        Performs a comprehensive check of hourly and daily limits. Also cleans up
         old request data and provides current usage statistics.
         
         Returns:
@@ -135,15 +134,11 @@ class RateLimiter:
         # Clean up old requests
         data['requests'] = self._cleanup_old_requests(data['requests'], current_time)
         
-        # Check cooldown period
-        reminder_cooldown = self._get_reminder_cooldown(data, current_time)
-        
-        # Check rate limits
+        # Check rate limits (skip cooldown check)
         next_reset = self._get_next_reset(data, current_time)
 
-        is_valid = reminder_cooldown == 0 and next_reset == 0
+        is_valid = next_reset == 0
         limit_type = RateLimitType.NONE if is_valid else (
-            RateLimitType.COOLDOWN if reminder_cooldown > 0 else
             RateLimitType.HOURLY_LIMIT if next_reset < 60 else
             RateLimitType.DAILY_LIMIT
         )
@@ -151,7 +146,7 @@ class RateLimiter:
         return RateLimitResult(
             valid=is_valid,
             limit_type=limit_type,
-            remaining_cooldown=reminder_cooldown,
+            remaining_cooldown=0,  # Always 0 since cooldown is disabled
             next_reset=next_reset,
             stats=self._get_usage_stats(data['requests'], current_time)
         )

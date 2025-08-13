@@ -1,7 +1,7 @@
 import requests
 from typing import List, Dict, Any, Optional
 import os
-from event_service import EventService
+from .event_service import EventService
 
 
 class TicketMasterService(EventService):

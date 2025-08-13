@@ -1,0 +1,37 @@
+name: Sync to Hugging Face Space
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  sync-to-hf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HF_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan hf.co >> ~/.ssh/known_hosts
+
+      - name: Clone Hugging Face Space via SSH
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          
+          git clone git@hf.co:spaces/daniela-veloz/WebSummarizer hf-space
+          cd hf-space
+
+          # Sync files using rsync, excluding .git directory
+          rsync -av --exclude='.git' ../. .
+
+          # Commit and push changes
+          git add .
+          git commit -m "Sync from GitHub repo" || exit 0
+          git push origin main

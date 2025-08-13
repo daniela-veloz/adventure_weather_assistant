@@ -74,19 +74,23 @@ python app.py
 ```
 
 ### Testing Individual Components
+
 ```python
 # Test weather service
-from weather_service import WeatherService
+from backend.weather_service import WeatherService
+
 weather_service = WeatherService()
 forecast = weather_service.fetch_weather("London", 3)
 
 # Test event aggregation
-from event_service_aggregator import EventServiceAggregator
+from backend.event_service_aggregator import EventServiceAggregator
+
 aggregator = EventServiceAggregator()
 results = aggregator.get_events("Seattle", "US", "music", max_results=5)
 
 # Test chat agent
-from activity_adventure_agent import ActivityAdventureAgent
+from backend.activity_adventure_agent import ActivityAdventureAgent
+
 agent = ActivityAdventureAgent()
 response = agent.chat("What should I do in Austin?", [])
 ```
