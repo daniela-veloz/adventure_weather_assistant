@@ -8,7 +8,7 @@ sdk_version: "1.48.0"
 app_file: app.py
 pinned: false
 license: mit
-short_description: An intelligent activity planning assistant based on weather and events
+short_description: AI activity planner with weather and events
 ---
 
 # 🌤️ Adventure Weather Assistant
