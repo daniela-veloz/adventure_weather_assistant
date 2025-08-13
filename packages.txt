@@ -1,2 +1,7 @@
-# No additional system packages required
-# This file overrides HuggingFace's default package installation
+git
+ffmpeg
+libsm6
+libxext6
+cmake
+rsync
+libgl1-mesa-dev
