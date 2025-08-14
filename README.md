@@ -15,6 +15,9 @@ short_description: AI activity planner with weather and events
 An intelligent activity planning assistant that combines real-time weather data with local event information to suggest
 personalized activities. Built with Streamlit and powered by OpenAI GPT-4o-mini.
 
+## 🌐 Live Demo
+**Try it now:** [https://huggingface.co/spaces/daniela-veloz/adventure_weather_assistant](https://huggingface.co/spaces/daniela-veloz/adventure_weather_assistant)
+
 ## 🚀 Features
 
 - **🌦️ Real-time Weather Integration**: 7-day weather forecasts from WeatherAPI
@@ -24,39 +27,58 @@ personalized activities. Built with Streamlit and powered by OpenAI GPT-4o-mini.
 - **🛡️ Rate Limiting**: Fair usage controls (10/hour, 25/day per IP)
 - **🌐 Web Interface**: Modern Streamlit-based chat interface
 
-## 🎓 LLM Techniques & Learning Opportunities
+## 🎓 GEN-AI Skills Showcased
 
-This project serves as a comprehensive learning platform for modern LLM application development, covering essential techniques and patterns used in production AI systems:
+This project demonstrates cutting-edge **Generative AI** techniques and serves as a comprehensive learning platform for modern LLM application development, covering essential patterns used in production AI systems:
 
-### 🔧 **Function Calling & Tool Use**
-- **OpenAI Function Calling**: Learn how to extend LLM capabilities with external tools
-- **Function Registry Pattern**: Implement dynamic function mapping for extensible AI agents
-- **Tool Orchestration**: Coordinate multiple API calls based on LLM decisions
-- **Parameter Validation**: Handle function arguments and ensure proper API integration
+### 🤖 **Advanced LLM Integration**
+- **OpenAI GPT-4o-mini**: Production-grade language model integration with sophisticated prompt engineering
+- **Function Calling**: Automatic tool selection and execution based on natural language queries
+- **Conversational AI**: Multi-turn dialogue management with context preservation
+- **Intelligent Decision Making**: LLM autonomously decides when and how to fetch external data
 
-### 💬 **Conversation Management**
-- **Memory Systems**: Maintain context across multi-turn conversations
-- **Session State**: Persist conversation data in web applications
+### 🔧 **Function Calling & Tool Orchestration**
+- **Dynamic Function Registry**: Runtime function mapping enabling extensible AI agent capabilities
+- **Multi-Tool Coordination**: Seamless orchestration of weather APIs, event services, and location data
+- **Parameter Extraction**: Intelligent parsing of user intent to extract function arguments
+- **Conditional Tool Use**: LLM determines optimal tool combinations based on query context
+- **Error Recovery**: Graceful handling of API failures with fallback strategies
 
-### 🎯 **Prompt Engineering**
-- **System Prompts**: Design effective instructions for AI behavior and personality
-- **Function Call Guidance**: Write prompts that encourage proper tool usage
-- **Error Recovery**: Handle edge cases and guide LLMs through failure scenarios
-- **Iterative Processing**: Handle multi-step workflows with function calls
+### 🧠 **AI Agent Architecture**
+- **Agent-Based Design**: Autonomous AI agent that can reason, plan, and execute complex tasks
+- **State Management**: Persistent conversation memory across multiple interactions
+- **Context Awareness**: Understanding of user preferences and conversation history
+- **Iterative Processing**: Multi-step workflows with feedback loops and self-correction
 
+### 🎯 **Advanced Prompt Engineering**
+- **System Prompt Design**: Carefully crafted instructions defining AI personality and behavior
+- **Function Call Guidance**: Prompts that encourage optimal tool usage patterns
+- **Chain-of-Thought**: Structured reasoning processes for complex decision making
+- **Context Injection**: Dynamic prompt augmentation with real-time data
+- **Response Formatting**: Structured output generation for consistent user experience
 
-### 🏗️ **Production AI Architecture**
-- **Modular Design**: Separate concerns between UI, business logic, and external services
-- **Service Layer Pattern**: Abstract API integrations for maintainability
-- **Rate Limiting**: Implement fair usage policies for API cost control
+### 📊 **Real-World AI Applications**
+- **Multi-Modal Data Fusion**: Intelligent combination of weather, event, and location data
+- **Ranking & Recommendation**: AI-powered scoring and prioritization of activities
+- **Parallel Processing**: Concurrent API orchestration for optimal performance
+- **Real-Time Intelligence**: Live data integration with immediate AI-powered insights
+- **Personalization**: Adaptive recommendations based on user context and preferences
 
-### 📊 **Real-World Integration**
-- **Multi-API Orchestration**: Combine weather, events, and location data intelligently
-- **Parallel Processing**: Execute multiple API calls concurrently for better performance
-- **Data Aggregation**: Merge and rank results from multiple sources
+### 🏗️ **Production AI Patterns**
+- **Modular AI Architecture**: Clean separation between AI logic, data services, and UI
+- **Scalable Design**: Service layer abstraction enabling easy expansion of AI capabilities
+- **Rate Limiting**: Production-ready API management and cost control
+- **Error Handling**: Robust failure management preserving user experience
+- **Monitoring & Observability**: Usage tracking and system health monitoring
 
+### 🚀 **Modern AI Deployment**
+- **Web-Based AI Interface**: Streamlit integration for accessible AI applications
+- **API Integration**: Seamless connection to multiple external services
+- **Environment Management**: Secure configuration and credential handling
+- **Containerization**: Docker-ready deployment for cloud platforms
+- **Real-Time Processing**: Immediate AI responses with live data integration
 
-This project provides a practical foundation for understanding how to build, deploy, and maintain AI-powered applications in real-world scenarios.
+This project provides a **practical foundation** for understanding how to build, deploy, and maintain **AI-powered applications** in real-world scenarios, demonstrating the full spectrum of **Generative AI** capabilities from basic chat interfaces to sophisticated multi-tool AI agents.
 
 ## 🏗️ Architecture
 
