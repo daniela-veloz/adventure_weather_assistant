@@ -124,7 +124,6 @@ def main():
             with st.spinner("🚀 Initializing Adventure Weather Agent..."):
                 load_and_validate_environment()
                 st.session_state.agent = create_agent()
-            st.success("✅ Agent initialized successfully!")
         except ValueError as e:
             st.error(f"❌ Configuration Error: {str(e)}")
             st.stop()
